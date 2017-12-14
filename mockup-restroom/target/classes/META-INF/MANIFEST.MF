@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: restroom-mockup
 Implementation-Version: 0.0.3-SNAPSHOT
-Built-By: Dan
+Built-By: dpulido
 Implementation-Vendor-Id: gogools.test
-Build-Jdk: 1.8.0_151
+Build-Jdk: 1.8.0_144
 Implementation-URL: http://maven.apache.org
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
