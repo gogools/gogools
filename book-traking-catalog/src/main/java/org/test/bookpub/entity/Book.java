@@ -16,18 +16,18 @@ public class Book {
 
 	@Id
 	@GeneratedValue
-	private Long				  id;
-	final private String		  isbn;
-	final private String		  title;
-	private String				  description;
+	private Long				 id;
+	final private String		 isbn;
+	final private String		 title;
+	private String				 description;
 
 	@ManyToOne
-	final private Author		  author;
+	final private Author		 author;
 
 	@ManyToOne
-	final private Publisher		  publisher;
+	final private Publisher		 publisher;
 
 	@ManyToMany
-	final private List<Reviewers> reviewers;
-	
+	final private List<Reviewer> reviewers;
+
 }
