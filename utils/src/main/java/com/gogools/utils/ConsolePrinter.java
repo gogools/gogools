@@ -39,19 +39,8 @@ public class ConsolePrinter {
 		}
 	}
 	
-
-	public static void prettyJson(String preMsg, Object object) {
-
-		System.out.println(logHeader);
-		System.out.println("=== " + preMsg + " ===");
-		prettyJson(object);
-	}
-	
-	
-	public static void obj2Console(String preMsg, Object object) {
+	public static String obj2Console(Object object) {
 		
-		System.out.println(logHeader);
-		System.out.println("=== " + preMsg + " ===");
-		System.out.println(object == null ? "NULL" : object.toString());
+		return object == null ? "NULL" : object.toString();
 	}
 }

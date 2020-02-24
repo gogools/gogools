@@ -14,18 +14,18 @@ public class Regex {
 	 */
 	
 	/*	PASSWORD DETAIL
-	 * 	^                 = start-of-string
-	 *	(?=.*[0-9])       = a digit must occur at least once
-	 *  (?=.*[a-z])       = a lower case letter must occur at least once
-     *  (?=.*[A-Z])       = an upper case letter must occur at least once
-     *  (?=.*[@#$%^&+=\.,;])  = a special character must occur at least once
-	 *  (?=\S+$)          = no whitespace allowed in the entire string
-     *  .{8,}             = anything, at least eight places
-	 *  $                 = end-of-string
+	 * 	^                 		= start-of-string
+	 *	(?=.*[0-9])       		= a digit must occur at least once
+	 *  (?=.*[a-z])       		= a lower case letter must occur at least once
+     *  (?=.*[A-Z])       		= an upper case letter must occur at least once
+     *  (?=.*[@#$%^&+=\.,;])  	= a special character must occur at least once
+	 *  (?=\S+$)          		= no whitespace allowed in the entire string
+     *  .{8,}             		= anything, at least eight places
+	 *  $                		 = end-of-string
 	 */
 
 	public static final String	EMAIL_PATTERN		= "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-	public static final String	PASSWORD_PATTERN		= "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%\\.,])(?=\\S+$).{8,20}$";
+	public static final String	PASSWORD_PATTERN	= "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%\\.,])(?=\\S+$).{8,20}$";
 	public static final String	IMAGE_PATTERN		= "([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)";
 	public static final String	NIP_PATTERN			= "^[0-9]{4}$";
 

@@ -1,0 +1,9 @@
+
+.DS_Store
+utils/.classpath
+utils/.project
+*.class
+utils/target/classes/META-INF/MANIFEST.MF
+utils/target/classes/META-INF/maven/com.gogools/utils/pom.properties
+utils/target/classes/META-INF/maven/com.gogools/utils/pom.xml
+**.jar

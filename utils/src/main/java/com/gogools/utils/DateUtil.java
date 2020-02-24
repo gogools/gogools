@@ -6,7 +6,6 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
@@ -31,9 +30,9 @@ public class DateUtil {
 		}
 	};
 
-	public static final String DAY_MONTH_FORMAT 			= "M-dd";
+	public static final String DAY_MONTH_FORMAT 		= "M-dd";
 	public static final String DEFAULT_FORMAT 			= "yyyy-M-dd";
-	public static final String DEFAULT_DATE_TIME_FORMAT 	= "yyyy-M-dd HH:mm:ss";
+	public static final String DEFAULT_DATE_TIME_FORMAT = "yyyy-M-dd HH:mm:ss";
 	
 	
 	public static String getStringFromDate(Date date) {
@@ -91,7 +90,7 @@ public class DateUtil {
 	}
 
 	
-	public static String getFirstDayOfTheWeekOnString() {
+	public static String getFirstDayOfTheWeekOn() {
 		
 		LocalDateTime ldt = LocalDateTime.now();
 
@@ -103,7 +102,7 @@ public class DateUtil {
 	}
 	
 	
-	public static String getLastDayOfTheWeekOnString() {
+	public static String getLastDayOfTheWeekOn() {
 		
 		LocalDateTime ldt = LocalDateTime.now();
 
@@ -115,7 +114,7 @@ public class DateUtil {
 	}
 	
 	
-	public static String getFirstDayOfTheMonthOnString() {
+	public static String getFirstDayOfTheMonthOn() {
 		
 		LocalDateTime ldt = LocalDateTime.now();
 
@@ -127,7 +126,7 @@ public class DateUtil {
 	}
 	
 	
-	public static String getLastDayOfTheMonthOnString() {        
+	public static String getLastDayOfTheMonthOn() {        
 		
 		LocalDate ldt = LocalDate.now().withDayOfMonth(LocalDate.now().lengthOfMonth());
 		
@@ -138,7 +137,7 @@ public class DateUtil {
 	
 	/**
 	 * 
-	 * @param dateToValidate, default format: dd-M-yyyy
+	 * @param dateToValidate, default format: dd-MM-yyyy
 	 * @return boolean
 	 */
 	public static boolean valiDate(String dateToValidate){
@@ -166,28 +165,6 @@ public class DateUtil {
 	}
 	
 	
-	public static String getCurrentMexDate() {
-		
-		LocalDateTime ldt = LocalDateTime.now();
-
-		ZonedDateTime serverDateTime = ldt.atZone(ZoneId.systemDefault());
-		ZonedDateTime mexDateTime 	= serverDateTime.withZoneSameInstant(ZoneOffset.of("-06:00"));
-		
-	    return DateTimeFormatter.ofPattern(DEFAULT_FORMAT).format(mexDateTime);
-	}
-	
-	
-	public static String getCurrentMexDateTime() {
-		
-		LocalDateTime ldt = LocalDateTime.now();
-
-		ZonedDateTime serverDateTime = ldt.atZone(ZoneId.systemDefault());
-		ZonedDateTime mexDateTime 	= serverDateTime.withZoneSameInstant(ZoneOffset.of("-06:00"));
-		
-	    return DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT).format(mexDateTime);
-	}
-	
-	
 	public static String getCurrentDateAtZone(ZoneId zone) {
 		
 		LocalDateTime ldt = LocalDateTime.now();
@@ -195,28 +172,5 @@ public class DateUtil {
 		ZonedDateTime zoneDateTime = ldt.atZone(zone);
 		
 		return DateTimeFormatter.ofPattern(DEFAULT_DATE_TIME_FORMAT).format(zoneDateTime);
-	}
-	
-	
-	public static String getDayOfWeek(int value){
-
-	    switch(value){
-	    case 1:
-	        return "Dom";
-	    case 2:
-	        return "Lun";
-	    case 3:
-	        return "Mar";
-	    case 4:
-	        return "Mie";
-	    case 5:
-	        return "Jue";
-	    case 6:
-	        return "Vie";
-	    case 7:
-	        return "Sab";
-	    default:
-	    		return "unk. day";
-	    }
 	}
 }
