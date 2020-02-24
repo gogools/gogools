@@ -1,2 +1,0 @@
-
-SHOW TABLE STATUS FROM `r3db` WHERE `name` LIKE 'card';
