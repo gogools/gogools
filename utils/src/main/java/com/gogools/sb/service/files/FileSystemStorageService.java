@@ -23,9 +23,20 @@ import com.gogools.enums.Emj;
 
 import lombok.extern.slf4j.Slf4j;
 
+
+/**
+ *  # max file size
+ *	spring.servlet.multipart.max-file-size=10MB #optional
+ *  # max request size
+ *	spring.servlet.multipart.max-request-size=10MB #optional
+ *  # files storage location properties
+ *  storage.location=./uploads
+ * @author dpulido
+ *
+ */
 @Slf4j
 @Service
-public class FileSystemStorageService implements StorageService {
+public class FileSystemStorageService implements IStorageService {
 
 	private final Path rootLocation;
 
@@ -75,7 +86,7 @@ public class FileSystemStorageService implements StorageService {
 							this.rootLocation.resolve(filename), 
 							StandardCopyOption.REPLACE_EXISTING);
 				
-				log.info(Emj.INFO + " [FileSystemStorageService] file: {}, stored", filename);
+				log.info(Emj.INFO + " [FileSystemStorageService] file: {}, stored", this.rootLocation.resolve(filename));
 			}
 			
 		} catch (IOException e) {

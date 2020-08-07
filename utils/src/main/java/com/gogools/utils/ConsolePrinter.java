@@ -2,6 +2,7 @@ package com.gogools.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@Deprecated
 public class ConsolePrinter {
 
 	public static String logHeader = "===== CONSOLE PRINTER : ";

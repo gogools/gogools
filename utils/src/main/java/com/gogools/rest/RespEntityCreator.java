@@ -9,26 +9,26 @@ import org.springframework.http.ResponseEntity;
 
 public class RespEntityCreator<T> {
 
-	private RestResponse<T> response;
+	private RestResponseDTO<T> response;
 
 	public RespEntityCreator(String message) {
 
-		response = new RestResponse<T>(message);
+		response = new RestResponseDTO<T>(message);
 	}
 
 	public RespEntityCreator(String message, T body) {
 
-		response = new RestResponse<T>(message, body);
+		response = new RestResponseDTO<T>(message, body);
 	}
 
 	public RespEntityCreator(String message, Map<String, List<String>> errors) {
 
-		response = new RestResponse<T>(message, errors);
+		response = new RestResponseDTO<T>(message, errors);
 	}
 
 	public RespEntityCreator(String message, T body, Map<String, List<String>> errors) {
 
-		response = new RestResponse<T>(message, body, errors);
+		response = new RestResponseDTO<T>(message, body, errors);
 	}
 
 	public ResponseEntity<?> ok() {
@@ -61,19 +61,28 @@ public class RespEntityCreator<T> {
 		return ResponseEntity.badRequest().headers(headers).body(response);
 	}
 
-	public ResponseEntity<Object> badHandler(HttpHeaders headers) {
-
-		return ResponseEntity.badRequest().headers(headers).body(response);
-	}
-
 	public ResponseEntity<?> err() {
 
-		return ResponseEntity.badRequest().body(response);
+		return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 	public ResponseEntity<?> err(HttpHeaders headers) {
 
-		return ResponseEntity.badRequest().headers(headers).body(response);
+		return new ResponseEntity<>(response, headers, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
+	public ResponseEntity<?> notFound() {
+
+		return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+	}
+
+	public ResponseEntity<?> unauthorized() {
+
+		return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+	}
+	
+	public ResponseEntity<?> unauthorized(HttpHeaders headers) {
+
+		return new ResponseEntity<>(response, headers, HttpStatus.UNAUTHORIZED);
+	}
 }
