@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Chop Chop Shop</title>
+
+<meta name="keywords" content="Tienda Online Chop Chop Shop" />
+<meta name="description" content="Tienda Online Chop Chop Shop">
+<meta name="author" content="gogools">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+<!-- Web Fonts  -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400" rel="stylesheet"
+	type="text/css">
+
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="vendor/animate/animate.min.css">
+<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
+<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
+<link rel="stylesheet" href="vendor/bootstrap-star-rating/css/star-rating.min.css">
+<link rel="stylesheet" href="vendor/bootstrap-star-rating/themes/krajee-fas/theme.min.css">
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/theme-elements.css">
+<link rel="stylesheet" href="css/theme-blog.css">
+<link rel="stylesheet" href="css/theme-shop.css">
+
+<!-- Demo CSS -->
+
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="css/skins/default.css">
+
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Head Libs -->
+<script src="vendor/modernizr/modernizr.min.js"></script>
+
+</head>
+<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+	<div class="loading-overlay">
+		<div class="bounce-loader">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
+
+	<div class="body">
+	
+		<div th:replace="fragments/frags.html :: headerSite"></div>
+
+		<div role="main" class="main">
+
+			<section class="page-header custom-product">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1>
+								Circuito <strong>Bushiroad México</strong>.
+							</h1>
+							<p class='light'>14 de Marzo - 15 de Marzo</p>
+							<p class="light lead">Costo: $150 por Jugador</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<div id="confirm-section">
+				<div class="container">
+					<h2>
+						<strong>¡Registrate!</strong>
+					</h2>
+					
+					<div id='registryError' th:insert="fragments/frags.html :: errors"> 
+						
+					</div>
+					
+					<div class="row">
+						<div class="col">
+							<section class="card card-admin">
+								<div class="card-body">
+									<form class=" form-horizontal form-bordered" name="eventRegister" method="post" th:object="${eventRegister}" id="eventRegister">
+										<div class="form-group row">
+											<label class="col-lg-3 control-label text-lg-right pt-2" for="inputDefault">Nombre</label>
+											<div class="col-lg-6">
+												<input type="text" class="form-control" id="name" name="name" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 control-label text-lg-right pt-2" for="inputDefault">Apellido Paterno</label>
+											<div class="col-lg-6">
+												<input type="text" class="form-control" id="lastname" name="lastname" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 control-label text-lg-right pt-2" for="inputDefault">Apellido Materno</label>
+											<div class="col-lg-6">
+												<input type="text" class="form-control" id="mothersname" name="mothersname" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 control-label text-lg-right pt-2" for="inputDefault">Correo</label>
+											<div class="col-lg-6">
+												<input type="email" class="form-control" id="email" name="email" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 control-label text-lg-right pt-2" for="inputDefault">Teléfono</label>
+											<div class="col-lg-6">
+												<input type="text" class="form-control" id="phone" name="phone" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 control-label text-lg-right pt-2">¿De dónde nos visitas?</label>
+											<div class="col-lg-6">
+												<select class="form-control" id="origin" name="origin" required>
+													<option value=""></option>
+													<option value="Aguascalientes">Aguascalientes</option>
+													<option value="Baja California">Baja California</option>
+													<option value="Baja California">Baja California Sur</option>
+													<option value="Campeche">Campeche</option>
+													<option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+													<option value="Colima">Colima</option>
+													<option value="Chiapas">Chiapas</option>
+													<option value="Chihuahua">Chihuahua</option>
+													<option value="Durango">Durango</option>
+													<option value="Guanajuato">Guanajuato</option>
+													<option value="Guerrero">Guerrero</option>
+													<option value="Hidalgo">Hidalgo</option>
+													<option value="Jalisco">Jalisco</option>
+													<option value="Ciudad de México">Ciudad de Mexico</option>
+													<option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+													<option value="Morelos">Morelos</option>
+													<option value="Nayarit">Nayarit</option>
+													<option value="Nayarit">Nuevo León</option>
+													<option value="Oaxaca">Oaxaca</option>
+													<option value="Puebla">Puebla</option>
+													<option value="Querétaro">Queretaro</option>
+													<option value="Querétaro">Quintana Roo</option>
+													<option value="Querétaro">San Luis Potosí</option>
+													<option value="Sinaloa">Sinaloa</option>
+													<option value="Sonora">Sonora</option>
+													<option value="Tabasco">Tabasco</option>
+													<option value="Tamaulipas">Tamaulipas</option>
+													<option value="Tlaxcala">Tlaxcala</option>
+													<option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+													<option value="Yucatán">Yucatan</option>
+													<option value="Zacatecas">Zacatecas</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-lg-3 control-label text-lg-right pt-2">Juegos</label>
+											<div class="col-lg-6">
+												<select class="form-control" id="eventDesc" name="eventDesc" required>
+													<option value=""></option>
+													<option value="Future Card Buddyfight - Sábado 30">Future Card Buddyfight - Marzo 14</option>
+													<option value="Cardfight Vanguard Standard - Sábado 30">Cardfight Vanguard Standard - Marzo 14</option>
+													<option value="Weiss Schwarz - Domingo 1">Weiss Schwarz - Marzo 15</option>
+													<option value="Cardfight Vanguard Premium - Domingo 1">Cardfight Vanguard Premium - Marzo 15</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-md-12 text-center">
+												<div class="form-group">
+													<button type="submit" class="btn btn-primary">Enviar</button>													
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<hr>
+			 
+		</div>
+
+		<div th:replace="fragments/frags.html :: footer"></div>
+	</div>
+
+	<!-- Vendor -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
+	<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>
+	<script src="vendor/popper/umd/popper.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/common/common.min.js"></script>
+	<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
+	<!-- <script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script> -->
+	<!-- <script src="vendor/jquery.gmap/jquery.gmap.min.js"></script> -->
+	<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+	<script src="vendor/isotope/jquery.isotope.min.js"></script>
+	<!-- <script src="vendor/owl.carousel/owl.carousel.min.js"></script> -->
+	<!-- <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script> -->
+	<script src="vendor/vide/jquery.vide.min.js"></script>
+	<script src="vendor/vivus/vivus.min.js"></script>
+	<!-- <script src="vendor/bootstrap-star-rating/js/star-rating.min.js"></script>
+	<script src="vendor/bootstrap-star-rating/themes/krajee-fas/theme.min.js"></script> -->
+
+	<!-- Theme Base, Components and Settings -->
+	<script src="js/theme.js"></script>
+
+	<!-- Current Page Vendor and Views -->
+	<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="vendor/circle-flip-slideshow/js/jquery.flipshow.min.js"></script>
+	<script src="js/views/view.home.js"></script>
+
+	<!-- Theme Custom -->
+	<script src="js/custom.js"></script>
+	
+	<!-- Validation-->
+	<script src="js/validation/eventRegister.js"></script>
+
+	<!-- Theme Initialization Files -->
+	<script src="js/theme.init.js"></script>
+
+	
+	<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
+
+</body>
+</html>

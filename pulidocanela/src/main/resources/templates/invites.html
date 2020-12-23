@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="fixed">
+
+<head>
+
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Marisa & Daniel</title>
+
+<meta name="keywords" content="invitados" />
+<meta name="description" content="Invitados">
+<meta name="author" content="gogools">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon" />
+
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+<!-- Web Fonts  -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="invites/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="invites/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="invites/vendor/animate/animate.min.css">
+<link rel="stylesheet" href="invites/vendor/simple-line-icons/css/simple-line-icons.min.css">
+<link rel="stylesheet" href="invites/vendor/owl.carousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="invites/vendor/owl.carousel/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="invites/vendor/magnific-popup/magnific-popup.min.css">
+
+
+<!-- Specific Page Vendor CSS -->
+<link rel="stylesheet" href="invites/vendor/select2/css/select2.css" />
+<link rel="stylesheet" href="invites/vendor/select2-bootstrap-theme/select2-bootstrap.min.css" />
+<link rel="stylesheet" href="invites/vendor/pnotify/pnotify.custom.css" />
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="invites/css/theme.css">
+<link rel="stylesheet" href="invites/css/theme-elements.css">
+<link rel="stylesheet" href="invites/css/theme-blog.css">
+<link rel="stylesheet" href="invites/css/theme-shop.css">
+
+<!-- Current Page CSS -->
+<link rel="stylesheet" href="invites/vendor/rs-plugin/css/settings.css">
+<link rel="stylesheet" href="invites/vendor/rs-plugin/css/layers.css">
+<link rel="stylesheet" href="invites/vendor/rs-plugin/css/navigation.css">
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="invites/css/skins/default.css">
+
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href="invites/css/custom.css">
+
+<!-- Head Libs -->
+<script src="invites/vendor/modernizr/modernizr.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="body">
+
+		<!-- 		<div sec:authorize="isAuthenticated()"> -->
+		<!-- 			This content is only shown to authenticated users. -->
+		<!-- 			<div sec:authentication="name"></div> -->
+		<!-- 			Authenticated user roles: -->
+		<!-- 			<div sec:authentication="principal.authorities"></div> -->
+		<!-- 		</div> -->
+		<!-- 		<div sec:authorize="hasAnyAuthority('NORMAL_ROLE')">This content is only shown to administrators.</div> -->
+		<!-- 		<div sec:authorize="hasAnyAuthority('SUPER_ROLE')">This content is only shown to users.</div> -->
+		<div role="main" class="main">
+			<div class="container" id="LoadingOverlayApi" data-loading-overlay>
+				<h4 class="heading-primary">Sube el archivo Excel de invitados [nombre, email]</h4>
+				<form id="invForm"class="well form-horizontal" action="#" method="post" th:action="@{/invitados}" enctype="multipart/form-data">
+					<ul>
+						<li th:if="${errorMsg}" style="color: red;"><span th:text="${error.file}">The error message</span></li>
+					</ul>
+
+					<div class="form-group">
+						<div class="col-md-12 selectContainer">
+							<input name="file" placeholder="Seleccionar archivos" class="form-control" data-msg-required="Por favor selecciona un archivo." type="file"
+								accept=".xls, .xlsx" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-4 control-label"></label>
+						<div class="col-md-6">
+							<button id="ApiShowOverlay" type="submit" class="btn btn-primary btn-lg mb-2">Enviar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="loading-overlay">
+				<div class="bounce-loader">
+					<div class="bounce1"></div>
+					<div class="bounce2"></div>
+					<div class="bounce3"></div>
+				</div>
+			</div>
+			<section  th:if="${users}" class="container content-body card-margin">
+				<div class="row">
+					<div class="col-lg-12">
+						<section class="card">
+							<header class="card-header">
+								<h2 class="card-title">Lista de invitados</h2>
+							</header>
+							<div class="card-body">
+								<table class="table table-responsive-md table-striped mb-0">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>Nombre</th>
+											<th>Usuario</th>
+											<th>Password</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="user,iter : ${users}">
+											<td th:text="${iter.index + 1}" />
+											<td th:text="${user.name}" />
+											<td th:text="${user.email}" />
+											<td th:text="${T( com.gogools.util.Util).getPassword(user.email)}" />
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<a id="a" style="display: none;" class="mb-1 mt-1 mr-1 modal-basic btn btn-success" href="#modalHeaderColorSuccess">Success</a>
+
+	<div id="modalHeaderColorSuccess" class="modal-block modal-header-color modal-block-success mfp-hide">
+		<section class="card">
+			<header class="card-header">
+				<h2 class="card-title">Boda de Marisa & Daniel</h2>
+			</header>
+			<div class="card-body">
+				<div class="modal-wrapper">
+					<div class="modal-icon">
+						<i class="fa fa-check"></i>
+					</div>
+					<div class="modal-text">
+						<h4>Listo</h4>
+						<p>Lista de invitados actualizada.</p>
+					</div>
+				</div>
+			</div>
+			<footer class="card-footer">
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button class="btn btn-success modal-dismiss">Ok</button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+
+	<!-- Vendor -->
+	<script src="invites/vendor/jquery/jquery.min.js"></script>
+	<script src="invites/vendor/jquery.appear/jquery.appear.min.js"></script>
+	<script src="invites/vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="invites/vendor/jquery-cookie/jquery-cookie.min.js"></script>
+	<script src="invites/vendor/popper/umd/popper.min.js"></script>
+	<script src="invites/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="invites/vendor/common/common.min.js"></script>
+	<script src="invites/vendor/jquery.validation/jquery.validation.min.js"></script>
+	<script src="invites/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+	<script src="invites/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+	<script src="invites/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+	<script src="invites/vendor/isotope/jquery.isotope.min.js"></script>
+	<script src="invites/vendor/owl.carousel/owl.carousel.min.js"></script>
+	<script src="invites/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="invites/vendor/vide/vide.min.js"></script>
+
+	<!-- Theme Base, Components and Settings -->
+	<script src="invites/js/theme.js"></script>
+
+	<!-- Current Page Vendor and Views -->
+	<script src="invites/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="invites/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<!-- Current Page Vendor and Views -->
+	<script src="invites/js/views/view.contact.js"></script>
+
+	<!-- Specific Page Vendor -->
+	<script src="invites/vendor/select2/js/select2.js"></script>
+	<script src="invites/vendor/pnotify/pnotify.custom.js"></script>
+
+	<!-- Theme Custom -->
+	<script src="invites/js/custom.js"></script>
+
+	<!-- Theme Initialization Files -->
+	<script src="invites/js/theme.init.js"></script>
+
+	<!-- Examples -->
+	<script src="invites/js/examples/examples.modals.js"></script>
+
+	<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+			ga('create', 'UA-12345678-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		 -->
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+		$(document).ready(function() {
+
+			var condition = /*[[${msg}]]*/'';
+
+			if (condition != null) {
+
+				$('#a').click();
+			}
+
+			$('#ApiShowOverlay').on('click', function() {
+
+				if ($("#invForm").valid()) {
+
+					$('#ApiShowOverlay').attr('disabled');
+					$('#LoadingOverlayApi').trigger('loading-overlay:show');
+				}
+
+			});
+
+		});
+
+		/*]]>*/
+	</script>
+</body>
+
+</html>

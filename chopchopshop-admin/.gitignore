@@ -1,0 +1,112 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+Skip to content
+ 
+Search…
+All gists
+Back to GitHub
+@gogools 
+@xXPhenomXx
+xXPhenomXx/.gitignore
+Created 7 years ago • Report abuse
+1
+0
+ Code
+ Revisions 1
+ Stars 1
+<script src="https://gist.github.com/xXPhenomXx/9813541.js"></script>
+Good Default .gitignore for Mac developers
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+ 
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+*.DS_Store
+ 
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+ 
+ 
+# IDE
+*.idea
+*.iml
+ 
+# Generated files
+/web-app/WEB-INF
+build/
+*.[oa]
+*.pyc
+ 
+# Other source repository archive directories (protects when importing)
+.hg
+.svn
+CVS
+ 
+# automatic backup files
+*~.nib
+*.swp
+*~
+*(Autosaved).rtfd/
+Backup[ ]of[ ]*.pages/
+Backup[ ]of[ ]*.key/
+Backup[ ]of[ ]*.numbers/
+@gogools
+ 
+Leave a comment
+No file chosen
+Attach files by dragging & dropping, selecting or pasting them.
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

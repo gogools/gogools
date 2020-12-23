@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+
+<body>
+	<!-- HEADER INDEX -->
+	<header th:fragment="headerIndex" id="header" class="header-transparent header-effect-shrink"
+		data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
+		<div class="header-body border-top-0 bg-dark box-shadow-none">
+			<div class="header-top header-top-borders header-top-light-2-borders">
+				<div class="container container-lg h-100">
+					<div class="header-row h-100">
+						<div class="header-column justify-content-start">
+							<div class="header-row">
+								<nav class="header-nav-top">
+									<ul class="nav nav-pills">
+										<li class="nav-item nav-item-borders py-2 d-none d-sm-inline-flex"><a href="#"><i
+												class="far fa-dot-circle text-4 text-color-primary" style="top: 1px;"></i>Tuberías Mz11 Lt10, Colonia Solidaridad Nacional, CDMX, México</span></a></li>
+										<li class="nav-item nav-item-borders py-2"><a href="tel:(55) 68291053"><i class="fab fa-whatsapp text-4 text-color-primary"
+												style="top: 0;"></i>(55) 68291053</a></li>
+										<li class="nav-item nav-item-borders py-2 d-none d-md-inline-flex"><a href="mailto:mail@domain.com"><i
+												class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> info@vhba.com.mx</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<div class="header-column justify-content-end">
+							<div class="header-row">
+								<nav class="header-nav-top">
+									<ul class="nav nav-pills">
+										<li class="nav-item nav-item-borders py-2 d-none d-lg-inline-flex"><a href="products">Productos</a></li>
+										<!-- <li class="nav-item nav-item-borders py-2 pr-0 dropdown">
+											<a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<img src="img/blank.gif" class="flag flag-us" alt="English" /> English
+												<i class="fas fa-angle-down"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownLanguage">
+												<a class="dropdown-item" href="#"><img src="img/blank.gif" class="flag flag-us" alt="English" /> English</a>
+												<a class="dropdown-item" href="#"><img src="img/blank.gif" class="flag flag-es" alt="English" /> Español</a>
+												<a class="dropdown-item" href="#"><img src="img/blank.gif" class="flag flag-fr" alt="English" /> Française</a>
+											</div>
+										</li> -->
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-container container container-xl">
+				<div class="header-row">
+					<div class="header-column">
+						<div class="header-row">
+							<div class="header-logo">
+								<a href="/"> <img alt="ChopChopShop" width="82" data-sticky-width="76" src="img/logo2.png">
+								</a>
+								<!-- 								<a href="index.html"> -->
+								<!-- 									<img alt="Porto" width="82" height="40" src="img/logo-default-slim-dark.png"> -->
+								<!-- 								</a> -->
+							</div>
+						</div>
+					</div>
+					<div class="header-column justify-content-end">
+						<div class="header-row">
+							<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
+								<div
+									class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+									<nav class="collapse">
+										<ul class="nav nav-pills" id="mainNav">
+											<li><a class="dropdown-item dropdown-toggle active" href="/"> Home </a></li>
+											<li class="dropdown">
+												<a class="dropdown-item dropdown-toggle" href="products">
+													Productos
+												</a>											
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/ws-preview.png"> Weiss Schwarz </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/vcf-preview.png"> Cardfight Vangard </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/fcbf-preview.png"> FC BuddyFight </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/mtg-preview.png"> MTG </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/fftcg-preview.png"> FinalFantasy TCG </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/acc-preview.png"> Accesorios  </a></li>
+												</ul>
+											</li>
+											<li><a href="/maintenance"> Conocenos </a></li>
+											<li><a href="/maintenance"> FAQ </a></li>
+											<li><a href="/maintenance"> Contactanos </a></li>
+										</ul>
+									</nav>
+								</div>
+								<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+									<i class="fas fa-bars"></i>
+								</button>
+							</div>
+							<div class="header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+								<div class="header-nav-feature header-nav-features-search header-nav-features-search-reveal d-inline-flex">
+									<a href="#" class="header-nav-features-search-show-icon d-inline-flex"><i class="fas fa-search header-nav-top-icon"></i></a>
+								</div>
+								<div class="header-nav-feature header-nav-features-cart d-inline-flex ml-2">
+									<a href="#" class="header-nav-features-toggle"> <img src="img/icons/icon-cart-light.svg" width="14" alt=""
+										class="header-nav-top-icon-img"> <span class="cart-info"> <span class="cart-qty">0</span>
+									</span>
+									</a>
+									<!-- <div class="header-nav-features-dropdown" id="headerTopCartDropdown">
+										<ol class="mini-products-list">
+											<li class="item">
+												<a href="#" title="Camera X1000" class="product-image"><img src="img/products/product-1.jpg" alt="Camera X1000"></a>
+												<div class="product-details">
+													<p class="product-name">
+														<a href="#">Camera X1000 </a>
+													</p>
+													<p class="qty-price">
+														 1X <span class="price">$890</span>
+													</p>
+													<a href="#" title="Remove This Item" class="btn-remove"><i class="fas fa-times"></i></a>
+												</div>
+											</li>
+										</ol>
+										<div class="totals">
+											<span class="label">Total:</span>
+											<span class="price-total"><span class="price">$890</span></span>
+										</div>
+										<div class="actions">
+											<a class="btn btn-dark" href="#">View Cart</a>
+											<a class="btn btn-primary" href="#">Checkout</a>
+										</div>
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Search -->
+		<div class="header-nav-features header-nav-features-no-border p-static">
+			<div
+				class="header-nav-feature header-nav-features-search header-nav-features-search-reveal header-nav-features-search-reveal-big-search header-nav-features-search-reveal-big-search-full">
+				<div class="container">
+					<div class="row h-100 d-flex">
+						<div class="col h-100 d-flex">
+							<form role="search" class="d-flex h-100 w-100" action="" method="get">
+								<div class="big-search-header input-group">
+									<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Escribe y preciona enter..."
+										oninvalid="this.setCustomValidity('Por favor captura este campo')" oninput="setCustomValidity('')" required> <a href="#"
+										class="header-nav-features-search-hide-icon"><i class="fas fa-times header-nav-top-icon"></i></a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- HEADER SITE -->
+	<header th:fragment="headerSite" id="header" class=""
+		data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 53, 'stickySetTop': '-53px'}">
+		<div class="header-body border-top-0 bg-dark box-shadow-none">
+			<div class="header-top header-top-borders header-top-light-2-borders">
+				<div class="container container-lg h-100">
+					<div class="header-row h-100">
+						<div class="header-column justify-content-start">
+							<div class="header-row">
+								<nav class="header-nav-top">
+									<ul class="nav nav-pills">
+										<li class="nav-item nav-item-borders py-2 d-none d-sm-inline-flex"><a href="#"><i
+												class="far fa-dot-circle text-4 text-color-primary" style="top: 1px;"></i>Tuberías Mz11 Lt10, Colonia Solidaridad Nacional, CDMX, México</span></a></li>
+										<li class="nav-item nav-item-borders py-2"><a href="tel:(55) 68291053"><i class="fab fa-whatsapp text-4 text-color-primary"
+												style="top: 0;"></i>(55) 68291053</a></li>
+										<li class="nav-item nav-item-borders py-2 d-none d-md-inline-flex"><a href="mailto:mail@domain.com"><i
+												class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> info@vhba.com.mx</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<div class="header-column justify-content-end">
+							<div class="header-row">
+								<nav class="header-nav-top">
+									<ul class="nav nav-pills">
+										<li class="nav-item nav-item-borders py-2 d-none d-lg-inline-flex"><a href="products">Productos</a></li>
+										<!-- <li class="nav-item nav-item-borders py-2 pr-0 dropdown">
+											<a class="nav-link" href="#" role="button" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<img src="img/blank.gif" class="flag flag-us" alt="English" /> English
+												<i class="fas fa-angle-down"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownLanguage">
+												<a class="dropdown-item" href="#"><img src="img/blank.gif" class="flag flag-us" alt="English" /> English</a>
+												<a class="dropdown-item" href="#"><img src="img/blank.gif" class="flag flag-es" alt="English" /> Español</a>
+												<a class="dropdown-item" href="#"><img src="img/blank.gif" class="flag flag-fr" alt="English" /> Française</a>
+											</div>
+										</li> -->
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-container header-container-height-sm container container-lg">
+				<div class="header-row">
+					<div class="header-column">
+						<div class="header-row">
+							<div class="header-logo">
+								<a href="/"> <img alt="ChopChopShop" width="188" height="90" data-sticky-width="146" data-sticky-height="70" data-sticky-top="35"
+									src="img/logo.png">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="header-column justify-content-end">
+						<div class="header-row">
+							<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
+								<div
+									class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+									<nav class="collapse">
+										<ul class="nav nav-pills" id="mainNav">
+											<li><a class="dropdown-item dropdown-toggle active" href="/"> Home </a></li>
+											<li class="dropdown">
+												<a class="dropdown-item dropdown-toggle" href="products">
+													Productos
+												</a>											
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/ws-preview.png"> Weiss Schwarz </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/vcf-preview.png"> Cardfight Vangard </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/fcbf-preview.png"> FC BuddyFight </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/mtg-preview.png"> MTG </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/fftcg-preview.png"> FinalFantasy TCG </a></li>
+													<li><a class="dropdown-item" href="/maintenance" data-thumb-preview="img/preview/acc-preview.png"> Accesorios  </a></li>
+												</ul>
+											</li>
+											<li><a href="/maintenance"> Conocenos </a></li>
+											<li><a href="/maintenance"> FAQ </a></li>
+											<li><a href="/maintenance"> Contactanos </a></li>
+										</ul>
+									</nav>
+								</div>
+								<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+									<i class="fas fa-bars"></i>
+								</button>
+							</div>
+							<div class="header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2">
+								<div class="header-nav-feature header-nav-features-search header-nav-features-search-reveal d-inline-flex">
+									<a href="#" class="header-nav-features-search-show-icon d-inline-flex"><i class="fas fa-search header-nav-top-icon"></i></a>
+								</div>
+								<div class="header-nav-feature header-nav-features-cart d-inline-flex ml-2">
+									<a href="#" class="header-nav-features-toggle"> <img src="img/icons/icon-cart-light.svg" width="14" alt=""
+										class="header-nav-top-icon-img"> <span class="cart-info"> <span class="cart-qty">0</span>
+									</span>
+									</a>
+									<!-- <div class="header-nav-features-dropdown" id="headerTopCartDropdown">
+										<ol class="mini-products-list">
+											<li class="item">
+												<a href="#" title="Camera X1000" class="product-image"><img src="img/products/product-1.jpg" alt="Camera X1000"></a>
+												<div class="product-details">
+													<p class="product-name">
+														<a href="#">Camera X1000 </a>
+													</p>
+													<p class="qty-price">
+														 1X <span class="price">$890</span>
+													</p>
+													<a href="#" title="Remove This Item" class="btn-remove"><i class="fas fa-times"></i></a>
+												</div>
+											</li>
+										</ol>
+										<div class="totals">
+											<span class="label">Total:</span>
+											<span class="price-total"><span class="price">$890</span></span>
+										</div>
+										<div class="actions">
+											<a class="btn btn-dark" href="#">View Cart</a>
+											<a class="btn btn-primary" href="#">Checkout</a>
+										</div>
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Search -->
+		<div class="header-nav-features header-nav-features-no-border p-static">
+			<div
+				class="header-nav-feature header-nav-features-search header-nav-features-search-reveal header-nav-features-search-reveal-big-search header-nav-features-search-reveal-big-search-full">
+				<div class="container">
+					<div class="row h-100 d-flex">
+						<div class="col h-100 d-flex">
+							<form role="search" class="d-flex h-100 w-100" action="" method="get">
+								<div class="big-search-header input-group">
+									<input class="form-control text-1" id="headerSearch" name="q" type="search" value="" placeholder="Escribe y preciona enter..."
+										oninvalid="this.setCustomValidity('Por favor captura este campo')" oninput="setCustomValidity('')" required> <a href="#"
+										class="header-nav-features-search-hide-icon"><i class="fas fa-times header-nav-top-icon"></i></a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- FOOTER -->
+	<footer th:fragment="footer" id="footer" class="mt-0">
+		<div class="container container-lg my-1">
+			<div class="row py-1">
+				<div class="col-lg-4 mb-5 mb-lg-0 text-center text-lg-left pt-3">
+					<h1 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">
+						<strong>Chop Chop Shop</strong>
+					</h1>
+					<p class="text-3 mb-3">Tienda dedicada a la venta de tarjetas intercambiables: Bushiroad, Final Fantasy TCG, Magic the Gathering y
+						Accesorios.</p>
+				</div>
+				<div class="col-lg-4 mb-4 mb-lg-0 text-center text-lg-left pt-3">
+					<h1 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">
+						<strong>Contactanos</strong>
+					</h1>
+					<p class="text-3 mb-2">
+						<span class="text-color-light">Dirección:</span> Tuberías Mz11 Lt10, Colonia Solidaridad Nacional, CDMX, México
+					</p>
+					<p class="text-3 mb-2">
+						<span class="text-color-light">Teléfono:</span> (55) 68291053
+					</p>
+					<p class="text-3 mb-2">
+						<span class="text-color-light">Email:</span> <a href="mailto:mail@example.com"> info@vhba.com.mx</a>
+					</p>
+				</div>
+				<div class="col-lg-4 text-center text-lg-left pt-3">
+					<h1 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">
+						<strong>Siguenos</strong>
+					</h1>
+					<ul class="footer-social-icons social-icons social-icons-clean social-icons-big social-icons-opacity-light social-icons-icon-light mt-0 mt-lg-3">
+						<li class="social-icons-facebook"><a href="https://www.facebook.com/chopchopshopmx/" target="_blank" title="Facebook"><i
+								class="fab fa-facebook-f"></i></a></li>
+						<li class="social-icons-twitter"><a href="https://www.instagram.com/chopchopshopmx/" target="_blank" title="Instagram"><i
+								class="fab fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container container-lg">
+			<div class="footer-copyright footer-copyright-style-2">
+				<div class="py-1">
+					<div class="row py-1">
+						<div class="col d-flex align-items-center justify-content-center mb-4 mb-lg-0">
+							<p>© Copyright 2020. - gogools@gmail.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<!-- EVENT CONFIRM -->
+	<div th:fragment="registryDone" class="container container-lg py-5 my-5">
+		<div class="row">
+			<div class="col">
+				<section class="call-to-action call-to-action-quaternary mb-5">
+					<div class="col-sm-9 col-lg-9">
+						<div class="call-to-action-content">
+							<h3>
+								¡Tu <strong>registro</strong> ha sido completad con <strong>exito!</strong>
+							</h3>
+							<p class="mb-0 opacity-7">
+								Te enviaremos un <strong class="font-weight-extra-bold">correo electrónico</strong> breve.
+							</p>
+						</div>
+					</div>
+					<div class="col-sm-3 col-lg-3">
+						<div class="call-to-action-btn">
+							<a href="/event" class="btn btn-modern text-2 btn-light border-0">OK</a>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+
+<!-- EVENT ERROR -->
+	<div id="divErrors" th:fragment="errors" class="row" style="display:none;">
+		<div class="col">
+			<div class="col pb-3">
+				<div class='alert alert-secondary'>
+					<strong>¡Ops!</strong> Algo raro ocurrio, por favor intenta mas tarde.
+					<span th:text="${errsSize}" >span</span>
+					<span th:if="${not #lists.isEmpty(errs)}" th:text="${#lists.size(errs)}" >span</span>
+					<ul>
+						<li th:each="e : ${errs}" style="color: white;"> 
+							<span th:text="${e.defaultMessage}">The error message</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
